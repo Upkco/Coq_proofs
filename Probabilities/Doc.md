@@ -25,7 +25,7 @@ The aim here is to prove [Kolmogorov's strong law of large numbers](https://en.w
 - Topo_results.v : general topology (more interesting results)
   Uses Topo_defs.v Topo_elem.v
   
-### "Sets_App" folder
+### "Sets_Apps" folder
 - Sets_basics.v : general definitions and basic results on sets
 - App_basics.v : general definitions and basic results on applications
 
