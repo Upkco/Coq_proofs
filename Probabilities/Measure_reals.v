@@ -90,6 +90,16 @@ Proof.
         generalize (archimed (/ (a-x))). nra.
 Qed.
 
+Lemma open_both_is_inter_infinite (a b :R) :
+  open_finite_int a b = inter (left_infinite_open_int b) (right_infinite_open_int a).
+Proof.
+  unfold open_finite_int. unfold inter. apply set_ext. intro x. split.
+  - intro H. split.
+    + unfold left_infinite_open_int. lra.
+    + unfold right_infinite_open_int. lra.
+  - intro H. destruct H as [H1 H2].
+    unfold left_infinite_open_int in H1. unfold right_infinite_open_int in H2. lra.
+Qed.
 
 
 
