@@ -19,7 +19,7 @@ Require Import List.
 Require Import Psatz.
 Require Import Rbase.
 Require Import Rfunctions.
-(*Add LoadPath "../Sets_Apps".*)
+
 Require Import Sets_basics.
 
 
