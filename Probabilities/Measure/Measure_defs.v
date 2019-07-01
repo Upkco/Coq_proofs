@@ -21,6 +21,7 @@ Require Import Rbase.
 Require Import Rfunctions.
 
 Require Import Sets_basics.
+Require Import Topo_defs.
 
 
 (*******************)
@@ -221,17 +222,6 @@ Proof.
   simpl in H'. assumption.
 Qed.
 
-
-(*Notions of topology*)
-
-Definition is_topo {E} (X : E -> Prop) (T : (E -> Prop) -> Prop) :=
-  T empty_set /\
-  T X /\
-  forall (l : list (E -> Prop)), (forall x, In x l -> T x) -> T (finite_inter l X) /\
-  forall (f : nat -> (E -> Prop)), (forall n, T (f n)) -> T (union_den f).
-
-Definition is_open {E} (X : E -> Prop) (T : (E -> Prop) -> Prop) o :=
-  is_topo X T /\ T o.
 
 (*The following definition doesn't verify that T is a topology on X.*)
 Definition borel_sig_alg {E} (X : E -> Prop) (T : (E -> Prop) -> Prop) :=

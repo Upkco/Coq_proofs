@@ -13,7 +13,7 @@ Require Import Rbase.
 Require Import Rfunctions.
 Require Import Sets_basics.
 
-Load Measure_basics.
+Require Import Measure_defs.
 
 Open Scope R_scope.
 

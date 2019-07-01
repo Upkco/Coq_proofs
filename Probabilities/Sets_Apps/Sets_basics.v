@@ -35,14 +35,20 @@ Definition compl {E} (X : E -> Prop) := fun x => not (X x).
 Definition compl_in {E} (X Y : E -> Prop) := fun x => (not (X x)) /\ Y x.
 (*Union of two sets.*)
 Definition union {E} (X Y : E -> Prop) := fun x => (X x) \/ (Y x).
+(*Indexed union*)
+Definition union_ind {E I} (f : I -> (E -> Prop)) := fun x => (exists n, (f n) x).
+(*General union*)
+Definition union_gen {E} (A : (E -> Prop) -> Prop) := fun x => (exists X, A X /\ X x).
 (*Countable union of sets.*)
 Definition union_den {E} (f : nat -> (E -> Prop)) := fun x => (exists n, (f n) x).
 (*Intersection of two sets.*)
 Definition inter {E} (X Y : E -> Prop) := fun x => (X x) /\ (Y x).
 (*Countable intersection of sets.*)
 Definition inter_den {E} (f : nat -> (E -> Prop)) := fun x => (forall n, (f n) x).
-(*General intersection*)
+(*Indexed intersection*)
 Definition inter_ind {E I} (f : I -> (E -> Prop)) := fun x => (forall i, (f i) x).
+(*General intersection*)
+Definition inter_gen {E} (A : (E -> Prop) -> Prop) := fun x => (forall X, A X -> X x).
 (*The empty set.*)
 Definition empty_set {E : Type} := fun (x : E) => False.
 (*Symmetric difference*)
